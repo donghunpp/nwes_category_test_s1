@@ -64,13 +64,12 @@ x_pad = pad_sequences(tokened_x, max)
 print(x_pad[:3])
 
 X_train, X_test, Y_train, Y_test = train_test_split(
-    x_pad, onehot_y, test_size=0.2
-)
+    x_pad, onehot_y, test_size=0.2)
 print(X_train.shape, Y_train.shape)
-print(X_train.shape, Y_test.shape)
+print(X_test.shape, Y_test.shape)
 
 xy = X_train, X_test, Y_train, Y_test
-np.save('./crawling_data/news_data_max_{}_wordsize_{}'.format(max, wordsize),xy)
+np.save('./crawling_data/news_data_max_{}_wordsize_{}'.format(max, wordsize), xy)
 
 
 
